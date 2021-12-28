@@ -12,7 +12,7 @@ function App() {
         </> :
         <Maintainanace />
       }
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
