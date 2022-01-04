@@ -32,7 +32,7 @@ const Footer = () => {
         <p className="footer__text small-1 center">Danny Sze &copy; 2022</p>
       </div>
     </footer>
-  )
+  );
 }
 
 export default Footer;

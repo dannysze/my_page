@@ -1,0 +1,95 @@
+#experience
+  margin-top: 1em
+  .timeline__container 
+    position: relative
+
+    // timeline
+    &::after
+      content: ''
+      height: 100%
+      width: 5px
+      position: absolute
+      background: red
+      top: 0
+      left: 50%
+      transform: translateX(-50%)
+      border-radius: 2.5px
+
+    .timeline__items
+      position: relative
+      padding: 1em
+      $timeline_margin: calc(50% + 2em)
+
+      .timeline__mark
+        position: absolute
+        border-radius: 50%
+        width: 25px
+        height: 25px
+        background: white
+        border: 5px solid red
+        box-sizing: border-box
+        top: 1.9em
+        left: 50%
+        transform: translate(-50%, -50%)
+        z-index: 2
+
+      .timeline__flag
+        width: 30% 
+        position: relative
+        display: flex
+        align-items: center
+        cursor: pointer
+        // column-gap: 1em
+        // box-shadow: 0 0 3px rgba(0, 0, 0, 0.2)
+        // padding: 1em
+
+        // .timeline__flag__img
+        //   img
+        //     width: 6rem
+
+        .timeline__flag__time
+          background: black
+          color: white
+          align-self: flex-end
+
+        .timeline__flag__title
+          padding: 0.3em 0.6em
+          box-shadow: 0 0 3px rgb(0 0 0 / 20%)
+          border-radius: 0.3em
+
+        // &::after
+        //   content: ''
+        //   position: absolute
+        //   border-top: 15px solid transparent
+        //   border-bottom: 15px solid transparent
+        //   top: 50%
+        //   transform: translateY(-50%) 
+      
+      .timeline__card
+        width: 30%
+        margin-top: 1em
+
+      &.item__left
+        .timeline__flag, .timeline__card
+          margin-left: auto
+          margin-right: $timeline_margin !important
+          text-align: right
+          &::after
+            // right: -30px
+            // border-left: 15px solid red
+            // border-right: 15px solid transparent
+          .timeline__flag__time
+            margin-left: auto
+
+      &.item__right
+        .timeline__flag, .timeline__card
+            margin-left: $timeline_margin !important
+        .timeline__flag
+          margin-right: auto
+          flex-direction: row-reverse
+          &::after
+            // left: -30px
+            // border-left: 15px solid transparent
+            // border-right: 15px solid red
+          .timeline__flag__time
+            margin-right: auto

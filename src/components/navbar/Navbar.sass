@@ -1,0 +1,18 @@
+@use '../../assets/variables' as v
+
+.navbar
+  background: #2b2b2b
+  position: fixed
+  width: 100%
+
+  .navbar__container
+    display: flex
+    column-gap: 1em
+  
+    .nav__items
+      padding: 1em 0
+      &.active, &:hover
+        color: v.$text-secondary
+        background: v.$bg-secondary
+        
+          
