@@ -22,11 +22,11 @@ const EmailForm = () => {
       <h1 className="form__title title-1 test-uppercase center">Contact Me</h1>
       <form ref={form} onSubmit={sendEmail} id="form">
         {/* <label>Name</label> */}
-        <input className="form__items form__input" type="text" name="user_name" placeHolder="Your Name" />
+        <input className="form__items form__input" type="text" name="user_name" placeholder="Your Name" />
         {/* <label>Email</label> */}
-        <input className="form__items form__input" type="email" name="user_email" placeHolder="Your Email" />
+        <input className="form__items form__input" type="email" name="user_email" placeholder="Your Email" />
         {/* <label>Message</label> */}
-        <textarea className="form__items form__textarea" name="message" rows={5} placeHolder="Message" />
+        <textarea className="form__items form__textarea" name="message" rows={5} placeholder="Message" />
         {/* <input type="submit" value="Send" /> */}
         <div className="form__btn__container flex__container__center">
           <button className="submit__btn test-uppercase">Send</button>
