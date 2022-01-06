@@ -41,7 +41,7 @@ const Footer = () => {
             </a> 
           ))}
         </div>
-        <p className="footer__text small-1 center">Danny Sze &copy; 2022</p>
+        <p className="footer__text text__xs center">Danny Sze &copy; 2022</p>
       </div>
     </footer>
   );
