@@ -17,9 +17,12 @@ const ExperienceCard = ({ detail }) => {
         </div>
         <div className="timeline__card">
           <ul className="timeline__card__list">
-            <li className="timeline__card__list__items">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
-            <li className="timeline__card__list__items">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
-            <li className="timeline__card__list__items">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+            {/* <li className="timeline__card__list__items">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li> */}
+            {/* <li className="timeline__card__list__items">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li> */}
+            {/* <li className="timeline__card__list__items">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li> */}
+            {detail.desc.map((item, idx) => 
+              <li key={idx} className="timeline__card__list__items">{item}</li>
+            )}
           </ul>
         </div>
       </div>
