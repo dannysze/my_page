@@ -1,19 +1,44 @@
+@use '../../assets/variables' as v
+
+$placeholder-color: #ffffff
+::placeholder  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $placeholder-color
+  opacity: 1 /* Firefox */
+
+:-ms-input-placeholder /* Internet Explorer 10-11 */
+  color: $placeholder-color
+
+::-ms-input-placeholder  /* Microsoft Edge */
+  color: $placeholder-color
+
 #contact
+  background-color: v.$dark-blue
   // flex-direction: column
   .form__title
+    display: inline-block
+    background: v.$light-yellow
+    color: v.$dark-blue
+    margin-block: 0
+  .form__desc 
+    // display: inline-block
+    color: v.$light-yellow
+    margin-block: 1em
 
   #form
-    width: 50%
+    width: 40%
     margin: auto
     // flex: auto
     display: flex
     flex-direction: column
     .form__items
-      margin-bottom: 1em
-      padding: 1em
+      margin-bottom: 1.5em
+      padding: 1.5em 1em
       border-radius: 0.5em
+      // border: 1px solid v.$light-blue
       border: none
-      box-shadow: inset 0 0px 4px rgb(0 0 0 / 10%)
+      color: white
+      // box-shadow: inset 0 0px 4px rgb(0 0 0 / 10%)
+      background-color: v.$royal-blue
 
     .form__input
 
@@ -21,14 +46,20 @@
       resize: none
     
     .form__btn__container
+      display: flex
+      justify-content: flex-end
       column-gap: 1em
       width: 100%
+
       .submit__btn
-        border: none
-        padding: 1em 2em
-        border-radius: 1.5em
+        // border: none
+        padding: 0.5em 1.5em
+        border-radius: 0.2em
         font-size: 1em
-        letter-spacing: 2px
+        background-color: v.$dark-blue
+        border: 2px solid v.$light-yellow
+        color: v.$light-yellow
+        // letter-spacing: 1px
         cursor: pointer
 
         &.submit__btn__secondary

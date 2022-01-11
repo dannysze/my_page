@@ -6,7 +6,7 @@ import Test from '../../assets/img/test.jpg';
 const ExperienceCard = ({ detail }) => {
   return (
     <div className="timeline__container">
-      <div className={`timeline__items ${detail.id % 2 ? 'item__left' : 'item__right'}`}>
+      <div className={`timeline__items ${detail.type == 1 ? 'item__left' : 'item__right'}`}>
         <div className="timeline__mark"></div>
         <div className="timeline__flag">
           {/* <div className="timeline__flag__img flex__container__center">
@@ -17,9 +17,6 @@ const ExperienceCard = ({ detail }) => {
         </div>
         <div className="timeline__card">
           <ul className="timeline__card__list">
-            {/* <li className="timeline__card__list__items">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li> */}
-            {/* <li className="timeline__card__list__items">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li> */}
-            {/* <li className="timeline__card__list__items">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li> */}
             {detail.desc.map((item, idx) => 
               <li key={idx} className="timeline__card__list__items">{item}</li>
             )}
@@ -34,7 +31,8 @@ const Experience = () => {
   return (
     <section id="experience" className="section__padding">
       {/* <div>Timeline</div> */}
-      <div className="timeline__container" className="max-width__container">
+      <div className="max-width__container">
+        <h1 className="experience__title center">Related Experiences</h1>
         {Details.map(item => <ExperienceCard key={item.id} detail={item} />)}
       </div>
     </section>

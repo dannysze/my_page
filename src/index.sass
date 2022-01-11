@@ -1,3 +1,4 @@
+@use 'assets/variables' as v
 html
   height: 100%
   scroll-behavior: smooth
@@ -18,7 +19,7 @@ body
   background: transparent
 
 ::-webkit-scrollbar-thumb
-  background: lightgrey
+  background: v.$light-yellow
   border-radius: 2.5px  
 
 @font-face
@@ -28,3 +29,7 @@ body
 @font-face
   font-family: 'Roboto-Thin'
   src: local('Roboto-Thin'), url(./assets/fonts/Roboto-Thin.ttf) format('truetype')
+
+@font-face
+  font-family: 'Roboto-Mono'
+  src: local('Roboto-Mono'), url(./assets/fonts/RobotoMono-Regular.ttf) format('truetype')

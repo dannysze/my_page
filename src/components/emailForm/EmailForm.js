@@ -19,19 +19,20 @@ const EmailForm = () => {
 
   return (
     <section id="contact" className="flex__container__center section__padding">
-      <div className="max-width__container">
+      <div className="max-width__container" style={{textAlign: 'center'}}>
         <h1 className="form__title text__l text-uppercase center">Contact Me</h1>
+        <p className="form__desc text__s center">My inbox is always open for any messages.</p>
         <form ref={form} onSubmit={sendEmail} id="form">
           {/* <label>Name</label> */}
           <input className="form__items form__input" type="text" name="user_name" placeholder="Your Name" />
           {/* <label>Email</label> */}
           <input className="form__items form__input" type="email" name="user_email" placeholder="Your Email" />
           {/* <label>Message</label> */}
-          <textarea className="form__items form__textarea" name="message" rows={5} placeholder="Message" />
+          <textarea className="form__items form__textarea" name="message" rows={8} placeholder="Anything say to me" />
           {/* <input type="submit" value="Send" /> */}
-          <div className="form__btn__container flex__container__center">
+          <div className="form__btn__container">
             <button className="submit__btn test-uppercase">Send</button>
-            <button className="submit__btn submit__btn__secondary test-uppercase">Reset</button>
+            {/* <button className="submit__btn submit__btn__secondary test-uppercase">Reset</button> */}
           </div>
         </form>
       </div>

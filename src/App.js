@@ -12,6 +12,9 @@ function App() {
 
   useEffect(() => {
     console.log(process.env.REACT_APP_MAINTAINANCE);
+    // const interval = setInterval(() => {
+    //   console.log(new Date().getTime());
+    // }, 1000)
   });
 
   return ( 

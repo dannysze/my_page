@@ -21,7 +21,7 @@
   margin: auto
 
 .section__padding
-  padding-block: 10rem
+  padding-block: 8rem
 
 // Typography
 
@@ -40,6 +40,9 @@
 .text__m
   font-size: 1.5em
 
+.text__ms
+  font-size: 1.25em
+
 .text__s
   font-size: 1em
 
@@ -49,8 +52,16 @@
 .text-uppercase
   text-transform: uppercase
 
+.mono
+  font-family: 'Roboto Mono', monospace !important
+
 // default link styles
 
 a, a:hover, a:visited
   text-decoration: none
   color: v.$text-primary
+
+// animation
+
+.transition__fast
+  transition: all .3s ease-in-out

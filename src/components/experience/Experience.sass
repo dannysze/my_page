@@ -1,5 +1,9 @@
+@use '../../assets/variables' as v
+
 #experience
-  margin-top: 1em
+  // margin-top: 1em
+  .experience__title
+    margin-bottom: 3em
   .timeline__container 
     position: relative
 
@@ -9,7 +13,7 @@
       height: 100%
       width: 5px
       position: absolute
-      background: red
+      background: v.$dark-blue
       top: 0
       left: 50%
       transform: translateX(-50%)
@@ -26,7 +30,7 @@
         width: 25px
         height: 25px
         background: white
-        border: 5px solid red
+        border: 5px solid v.$dark-blue
         box-sizing: border-box
         top: 1.9em
         left: 50%

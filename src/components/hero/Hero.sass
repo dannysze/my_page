@@ -1,4 +1,27 @@
-#hero
+@use '../../assets/variables' as v
+
+#home
   min-height: 100vh
   min-width: 100vw
-  background: yellow
+  background: v.$dark-blue
+  display: flex
+  align-items: center
+  .home__container
+    max-width: 50vw
+    *[class^="home__"]
+      display: inline-block
+      // margin-block: 0.5em
+    .home__greet
+      color: v.$orange-yellow
+      margin-block: 1em
+    .home__self
+      background: v.$light-yellow
+      color: v.$dark-blue
+      margin: 0
+    .home__slogan
+      color: v.$light-yellow
+      // color: v.$orange
+      margin: 0
+    .home__desc
+      color: v.$light-blue
+      margin-block: 1em
