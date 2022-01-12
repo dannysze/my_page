@@ -12,8 +12,8 @@ const ExperienceCard = ({ detail }) => {
           {/* <div className="timeline__flag__img flex__container__center">
             <img src={Test} alt="" />
           </div> */}
-          <div className="timeline__flag__time small-1">{detail.period}</div>
           <div className="timeline__flag__title">{detail.title} <span className="timeline__flag__company">@ <a href={detail.companyLink} target="_blank">{detail.company}</a></span></div>
+          <div className="timeline__flag__time text--xs bold">{detail.period}</div>
         </div>
         <div className="timeline__card">
           <ul className="timeline__card__list">
@@ -32,7 +32,7 @@ const Experience = () => {
     <section id="experience" className="section__padding">
       {/* <div>Timeline</div> */}
       <div className="max-width__container">
-        <h1 className="experience__title center">Related Experiences</h1>
+        <h1 className="experience__title text--l center bold text--uppercase">Related Experiences</h1>
         {Details.map(item => <ExperienceCard key={item.id} detail={item} />)}
       </div>
     </section>

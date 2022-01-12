@@ -21,7 +21,7 @@ const Footer = () => {
             </a> 
           ))}
         </div>
-        <p className="footer__text text__xs center mono">Danny Sze &copy; 2022</p>
+        <p className="footer__text text--xs center mono">Danny Sze <span>&copy; 2022</span></p>
       </div>
     </footer>
   );

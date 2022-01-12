@@ -3,11 +3,13 @@
 // role: string
 // roleDesc: string
 // 
-
+import code from '../../assets/icons/code.svg';
+import learn from '../../assets/icons/learn.svg';
 
 const Details = [{
   id: 1,
   pos: 2,
+  icon: code,
   role: 'Full Stack Developer',
   roleDesc: 'I like coding things from scratch, and building exceptional digital experience.',
   details: [{
@@ -23,6 +25,7 @@ const Details = [{
 }, {
   id: 2,
   pos: 1,
+  icon: learn,
   role: 'Learner',
   roleDesc: 'I gain more than knowledge from learning.',
   details: [{
