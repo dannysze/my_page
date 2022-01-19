@@ -7,8 +7,8 @@
     .about__avatar__container
       text-align: center
       #about__avatar
-        width: 200px
-        height: 200px
+        // width: 200px
+        width: clamp(150px, 20vw, 200px)
         border-radius: 50%
 
     .about__description__container
@@ -16,7 +16,7 @@
       margin: 3rem auto
       
       .about__description
-        
+        line-height: 1.5rem
 
     .about__cardsgroup
       display: flex
@@ -53,3 +53,14 @@
             .about__cards__content__list__items
               &:not(:last-child)
                 margin-bottom: 3px
+
+// Responsive design for mobile
+@media (max-width: 1024px)
+  .about__cardsgroup
+    flex-direction: column
+    align-items: stretch !important
+    .about__cards
+      border-radius: 0 !important
+      box-shadow: none !important
+      &:last-child
+        border-bottom: 2px solid v.$light-yellow

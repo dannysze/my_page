@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Fragment } from 'react';
 import './About.sass';
 import avatar from '../../assets/img/test.jpg';
 import { Details } from './AboutDetails';
@@ -15,12 +15,12 @@ const AboutCards = ({ detail }) => {
       </div>
       <div className="about__cards__content__container">
         {detail.details.map((item, idx) => (
-          <div key={idx}>
+          <Fragment key={idx}>
             <h2 className="about__cards__content__title text--s bold">{item.title}</h2>
             <ul className="about__cards__content__list">
               {item.skills.map((skill, idx2) => <li key={idx2}className="about__cards__content__list__items text--xs">{skill}</li>)}
             </ul>
-          </div>
+          </Fragment>
         ))}
       </div>
     </div>
@@ -36,7 +36,7 @@ const About = () => {
           <img src={avatar} alt="Testing" id="about__avatar" />
         </div>
         <div className="about__description__container">
-          <p className="about__description text--s center">Hello! My name is Danny and I enjoy creating things on websites and applications. A course of building web applications has kickstarted my interest in web development since 2019. Building (and occassionally designing) interactive applications gives me sense of satisfactory.</p>
+          <p className="about__description text--s center">I enjoy creating things on websites and applications. A course of building web applications has kickstarted my interest in development since 2019. Building (and occassionally designing) interactive applications gives me sense of satisfactory.</p>
         </div>
         <div className="about__cardsgroup">
           {Details.map((item) => <AboutCards key={item.id} detail={item} />)}

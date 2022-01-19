@@ -11,10 +11,7 @@ import Maintainanace from './pages/maintainance/Maintainance';
 function App() {
 
   useEffect(() => {
-    console.log(process.env.REACT_APP_MAINTAINANCE);
-    // const interval = setInterval(() => {
-    //   console.log(new Date().getTime());
-    // }, 1000)
+    // console.log(process.env.REACT_APP_MAINTAINANCE);
   });
 
   return ( 
@@ -23,10 +20,12 @@ function App() {
         <Maintainanace /> :
         <>
           <Navbar />
-          <Hero />
-          <About />
-          <Experience />
-          <EmailForm />
+          <main>
+            <Hero />
+            <About />
+            <Experience />
+            <EmailForm />
+          </main>
         </>
       }
       <Footer />

@@ -1,10 +1,6 @@
-// schema
-// id: unique int
-// role: string
-// roleDesc: string
-// 
 import code from '../../assets/icons/code.svg';
 import learn from '../../assets/icons/learn.svg';
+import face from '../../assets/icons/face.svg';
 
 const Details = [{
   id: 1,
@@ -14,7 +10,7 @@ const Details = [{
   roleDesc: 'I like coding things from scratch, and building exceptional digital experience.',
   details: [{
     title: 'Front-end Skills',
-    skills: ['HTML', 'CSS', 'Sass', 'JavaScript', 'jQuery', 'TypeScript', 'React', 'Angular', 'Ionic'],
+    skills: ['HTML', 'CSS', 'Sass', 'JavaScript', 'React', 'Angular', 'jQuery', 'TypeScript', 'Ionic'],
   }, {
     title: 'Back-end Skills',
     skills: ['Node.js', 'Express.js', 'PHP', 'SQL', 'MongoDB']
@@ -38,6 +34,7 @@ const Details = [{
 }, {
   id: 3,
   pos: 3,
+  icon: face,
   role: 'Danny SZE',
   roleDesc: 'I do what I want.',
   details: [{

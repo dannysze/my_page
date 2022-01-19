@@ -3,7 +3,7 @@
 #experience
   // margin-top: 1em
   .experience__title
-    margin-bottom: 3em
+    margin-bottom: 1em
     color: v.$dark-blue
   .timeline__container 
     position: relative
@@ -46,21 +46,9 @@
       .timeline__flag
         width: 30% 
         position: relative
-        // display: flex
-        // align-items: center
-        // column-gap: 0.5em
         color: v.$dark-blue
-        // cursor: pointer
-        // column-gap: 1em
-        // box-shadow: 0 0 3px rgba(0, 0, 0, 0.2)
-        // padding: 1em
-
-        // .timeline__flag__img
-        //   img
-        //     width: 6rem
 
         .timeline__flag__time
-          // background-color: #ffffff
           color: v.$royal-blue
           // align-self: flex-end
           position: relative
@@ -79,14 +67,6 @@
           a
             &, &:hover, &:active, &:visited
               color: v.$light-yellow
-
-        // &::after
-        //   content: ''
-        //   position: absolute
-        //   border-top: 15px solid transparent
-        //   border-bottom: 15px solid transparent
-        //   top: 50%
-        //   transform: translateY(-50%) 
       
       .timeline__card
         width: 30%
@@ -95,7 +75,7 @@
       &.item__left
         .timeline__flag, .timeline__card
           margin-left: auto
-          margin-right: $timeline_margin !important
+          margin-right: $timeline_margin
           text-align: right
           // text-align: right
           &::after
@@ -107,7 +87,7 @@
 
       &.item__right
         .timeline__flag, .timeline__card
-            margin-left: $timeline_margin !important
+            margin-left: $timeline_margin
         .timeline__flag
           margin-right: auto
           flex-direction: row-reverse
@@ -122,6 +102,64 @@
         // padding: 0
         margin-block: 1.5em
         text-align: left
+        list-style: none
+        padding-inline: 0.5em
+        // list-style-image: url(../../assets/icons/list_mark.svg)
         .timeline__card__list__items
-          color: v.$dark-blue
+          // color: v.$dark-blue
+          position: relative
           padding-bottom: 1em
+          &::before
+            content: " "
+            position: absolute
+            width: 10px
+            height: 10px
+            left: -20px
+            top: 5px
+            background: url(../../assets/icons/list_mark.svg)
+            background-repeat: no-repeat
+
+// Rsponsive design for mobile
+@media (max-width: 1024px)
+
+  .timeline__container
+    // timeline
+    &::after
+      left: 50px !important
+
+    .timeline__items
+      .timeline__mark
+        left: 50px !important
+
+      .timeline__flag
+        width: auto !important 
+
+        .timeline__flag__time
+
+        .timeline__flag__title
+      
+      $margin-left: 70px
+      .timeline__card
+        width: auto !important
+
+      &.item__left
+        .timeline__flag, .timeline__card
+          margin-left: $margin-left !important
+          margin-right: auto !important
+          text-align: left !important 
+          .timeline__flag__time
+            margin-left: 0.6rem
+            margin-right: 0 !important
+
+      &.item__right
+        .timeline__flag, .timeline__card
+          margin-left: $margin-left !important
+        .timeline__flag
+          margin-right: auto
+          &::after
+          .timeline__flag__time
+            margin-left: 0.6rem
+      
+      .timeline__card__list
+        padding-inline-start: 0.6rem
+        .timeline__card__list__items

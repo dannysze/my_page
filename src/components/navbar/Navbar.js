@@ -1,17 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState,  } from 'react';
+import { Helmet } from 'react-helmet';
 import './Navbar.sass';
 
 const Navbar = () => {
+  const [active, setActive] = useState(0);
+  const [toggleMenu, setToggleMenu] = useState(false);
+
+  const menuItems = ["home", "about", "experience", "contact"];
+
+  const menuToggler = () => {
+    setToggleMenu(!toggleMenu);
+  }
+
+  const navItemClickHandler = (idx) => {
+    // console.log(idx)
+    setActive(idx);
+    setToggleMenu(false);
+  }
+
   return( 
-    <nav className="navbar">
-      <div className="navbar__container max-width__container">
-        <a href="#home" className="nav__items active mono">Home</a>
-        <a href="#about" className="nav__items mono">About</a>
-        <a href="#experience" className="nav__items mono">Experience</a>
-        <a href="#contact" className="nav__items mono">Contact</a>
-        <a href="#" className="nav__button mono">Resume</a>
-      </div>
-    </nav>
+    <>
+      <Helmet>
+        <body className={ toggleMenu ? 'blur' : '' } />
+      </Helmet>
+      <nav className="navbar">
+        <div className="max-width__container">
+          <button className="toggle__btn" onClick={menuToggler}>Text</button>
+          <div className={`navbar__container ${ toggleMenu ? 'active' : '' }`}>
+            {menuItems.map((menuItem, idx) => (<a key={idx} href={`#${menuItem}`} className={`nav__items mono ${active === idx ? 'nav__active' : ''}`} onClick={() => navItemClickHandler(idx)}>{menuItem}</a>))}
+          </div>
+        </div>
+      </nav>
+    </>
   );
 }
 

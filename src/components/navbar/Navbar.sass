@@ -8,15 +8,35 @@ $hover-font-color: #ffffff
   width: 100%
   z-index: 10
   box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1)
+  height: 53px
+  .max-width__container
+    // position: relative
+    display: flex
+    align-items: center
+    height: 100%
+    .toggle__btn
+      display: none
+      // position: absolute
+      // padding: 1em
+      height: 100%
+      background-color: v.$dark-blue
+      border: none
+      color: v.$light-yellow
+      z-index: 20
+      cursor: pointer
+
   .navbar__container
     display: flex
-    column-gap: 1em
+    column-gap: 2em
+    transition: v.$fast-transition
+    overflow: hidden
 
     .nav__items
       padding: 1em 0
       color: $font-color
-      transition: all .2s ease-in-out
-      &.active, &:hover
+      transition: v.$fast-transition
+      text-transform: capitalize
+      &.nav__active, &:hover
         color: $hover-font-color
         // background: v.$bg-secondary
         // text-decoration: underline
@@ -29,4 +49,23 @@ $hover-font-color: #ffffff
       border: 1px solid $font-color
       border-radius: 0.5em
         
-          
+// Rsponsive design for mobile
+@media (max-width: 1024px)
+  .toggle__btn
+    display: block !important
+  .navbar__container
+    // display: none !important
+    background-color: v.$dark-blue
+    position: absolute
+    inset: 0
+    flex-direction: column !important
+    inset: 0
+    height: 100vh
+    width: 0
+    justify-content: center
+    &.active 
+      width: min(60vw, 300px) !important
+      // display: flex !important
+    .nav__items
+      padding: 2em 0 !important
+      text-align: center

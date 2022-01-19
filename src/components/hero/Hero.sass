@@ -7,7 +7,7 @@
   display: flex
   align-items: center
   .home__container
-    max-width: 50vw
+    // max-width: max(10%, 50vw))
     *[class^="home__"]
       display: inline-block
       // margin-block: 0.5em
@@ -24,4 +24,11 @@
       margin: 0
     .home__desc
       color: v.$light-blue
+      max-width: 750px
       margin-block: 1em
+
+// Rsponsive design for mobile
+@media (max-width: 1024px)
+  .home__container
+    // max-width: 90vw !important
+    // margin: auto

@@ -16,7 +16,7 @@
   align-items: center
 
 .max-width__container
-  max-width: 1280px
+  max-width: min(90%, 1280px)
   width: 100%
   margin: auto
 
@@ -29,25 +29,31 @@
   text-align: center
 
 .text--xxl
-  font-size: 5rem
+  // font-size: 5rem
+  font-size: clamp(3rem, 8vw, 5rem)
 
 .text--xl
-  font-size: 3rem
+  // font-size: 3rem
+  font-size: clamp(1.3rem, 3vw, 2rem)
 
 .text--l
-  font-size: 2rem
+  // font-size: 2rem
+  font-size: clamp(1.8rem, 5vw, 2rem)
 
 .text--m
-  font-size: 1.5em
+  font-size: 1.5rem
 
 .text--ms
-  font-size: 1.25em
+  // font-size: 1.25rem
+  font-size: clamp(1rem, 2.5vw, 1.5rem)
 
 .text--s
-  font-size: 1em
+  // font-size: 1rem
+  font-size: clamp(1rem, 2vw, 1.2rem)
 
 .text--xs
-  font-size: 0.9em
+  // font-size: 1rem
+  font-size: clamp(0.9rem, 1.8vw, 1rem)
 
 .text--uppercase
   text-transform: uppercase
@@ -71,3 +77,8 @@ a, a:hover, a:visited
 
 .transition__fast
   transition: all .3s ease-in-out
+
+// Rsponsive design for mobile
+@media (max-width: 1024px)
+  .section__padding
+    padding-block: 4rem
