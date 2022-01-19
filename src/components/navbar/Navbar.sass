@@ -16,14 +16,37 @@ $hover-font-color: #ffffff
     height: 100%
     .toggle__btn
       display: none
-      // position: absolute
+      position: relative
       // padding: 1em
-      height: 100%
+      height: 50%
+      width: 2.5em
       background-color: v.$dark-blue
       border: none
       color: v.$light-yellow
       z-index: 20
       cursor: pointer
+      span
+        position: absolute
+        inset: 0
+        border-block: 2px solid v.$light-yellow
+        transition: v.$fast-transition
+        width: 100%
+        &::before, &::after
+          content: ""
+          position: absolute
+          top: calc(50% - 1px)
+          left: 0
+          width: 2.5em
+          border-block: 1px solid v.$light-yellow
+          transition: v.$fast-transition 0.2s
+      &.active
+        span
+          width: 0 !important
+          // transition-delay: 0.2s
+          &::before
+            transform: rotate(45deg)
+          &::after
+            transform: rotate(-45deg)
 
   .navbar__container
     display: flex
