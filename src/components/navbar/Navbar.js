@@ -28,8 +28,13 @@ const Navbar = () => {
     setActive(idx);
     setToggleMenu(false);
   }
+
   const wrapperRef = useRef(null); 
   useClickOutside(wrapperRef, () => setToggleMenu(false));
+
+  const toggleBtnStyle = {
+    transitionDelay: toggleMenu ? '0s' : '0.4s'
+  };
 
   return( 
     <>
@@ -39,7 +44,7 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="max-width__container" ref={screenWidth <= 1024 ? wrapperRef : null}>
           <button className={`toggle__btn ${ toggleMenu ? 'active' : '' }`} onClick={menuToggler}>
-            <span></span>
+            <span style={toggleBtnStyle}></span>
           </button>
           <div className={`navbar__container ${ toggleMenu ? 'active' : '' }`}>
             {menuItems.map((menuItem, idx) => (<a key={idx} href={`#${menuItem}`} className={`nav__items mono ${active === idx ? 'nav__active' : ''}`} onClick={() => navItemClickHandler(idx)}>{menuItem}</a>))}
