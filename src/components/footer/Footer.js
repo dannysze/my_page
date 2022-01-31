@@ -16,7 +16,7 @@ const Footer = () => {
       <div className="footer__container">
         <div className="footer-icons__ribbon flex__container__center">
           {buttons.map((item, idx) => (
-            <a key={idx} href={item.link} className="footer-icons__link flex__container__center">
+            <a key={idx} href={item.link} className="footer-icons__link flex__container__center transition__xfast">
               {item.icon}
             </a> 
           ))}

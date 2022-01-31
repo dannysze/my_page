@@ -41,16 +41,18 @@ const Navbar = () => {
       <Helmet>
         <body className={ toggleMenu ? 'blur' : '' } />
       </Helmet>
-      <nav className="navbar">
-        <div className="max-width__container" ref={screenWidth <= 1024 ? wrapperRef : null}>
-          <button className={`toggle__btn ${ toggleMenu ? 'active' : '' }`} onClick={menuToggler}>
-            <span style={toggleBtnStyle}></span>
-          </button>
-          <div className={`navbar__container ${ toggleMenu ? 'active' : '' }`}>
-            {menuItems.map((menuItem, idx) => (<a key={idx} href={`#${menuItem}`} className={`nav__items mono ${active === idx ? 'nav__active' : ''}`} onClick={() => navItemClickHandler(idx)}>{menuItem}</a>))}
+      <header>
+        <nav className="navbar">
+          <div className="max-width__container" ref={screenWidth <= 1024 ? wrapperRef : null}>
+            <button className={`toggle__btn ${ toggleMenu ? 'active' : '' }`} onClick={menuToggler}>
+              <span style={toggleBtnStyle}></span>
+            </button>
+            <div className={`navbar__container ${ toggleMenu ? 'active' : '' }`}>
+              {menuItems.map((menuItem, idx) => (<a key={idx} href={`#${menuItem}`} className={`nav__items mono ${active === idx ? 'nav__active' : ''}`} onClick={() => navItemClickHandler(idx)}>{menuItem}</a>))}
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </header>
     </>
   );
 }

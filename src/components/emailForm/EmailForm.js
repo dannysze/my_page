@@ -1,38 +1,85 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import emailjs from 'emailjs-com';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { Check, ExclamationTriangle } from 'react-bootstrap-icons';
 import './EmailForm.sass';
 
 const EmailForm = () => {
 
   const form = useRef();
+  const recaptchaRef = useRef();
 
-  const sendEmail = (e) => {
+  const [input, setInput] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState();
+
+  const formChangeHandler = (e, key) => {
+    let currentInput = input;
+    currentInput[key] = e.target.value;
+    // console.log(currentInput);
+    setInput(currentInput);
+  }
+
+  const formSubmitHandler = (e) => {
     e.preventDefault();
+    setLoading(true);
+    recaptchaRef.current.executeAsync()
+    .then((captchaValue) => {
+      console.log(captchaValue)
+      sendEmail(captchaValue);
+    }).catch((err) => {
+      console.log(err);
+    }).finally(() => {
+      recaptchaRef.current.reset();
+    });
+  }
 
-    emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_USER_ID)
-      .then((res) => {
-        console.log(res.text);
-      }, (err) => {
-        console.log(err.text);
-      });
+  const sendEmail = (captchaValue) => {
+    const params = {
+      ...input,
+      'g-recaptcha-response': captchaValue,
+    };
+    console.log(params);
+    emailjs.send(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, params, process.env.REACT_APP_USER_ID)
+    .then((res) => {
+      console.log(res.text);
+      form.current.reset()
+      // notification for success
+      setSuccess(true);
+    }).catch((err) => {
+      console.log(err.text);
+      // notification for fail
+      setSuccess(false);
+    }).finally(() => {
+      setTimeout(() => {
+        setSuccess(null);
+        setLoading(false);
+      }, 3000);
+    });
   };
+
+  const btnStyle = { 
+    transitionDelay: loading ? '0.3s' : '0s'
+  }
 
   return (
     <section id="contact" className="flex__container__center section__padding">
       <div className="max-width__container" style={{textAlign: 'center'}}>
         <h1 className="form__title text--l text--uppercase center bold">Contact Me</h1>
-        <p className="form__desc text--s center">My inbox is always open for any messages.</p>
-        <form ref={form} onSubmit={sendEmail} id="form">
-          {/* <label>Name</label> */}
-          <input className="form__items form__input" type="text" name="user_name" placeholder="Your Name" />
-          {/* <label>Email</label> */}
-          <input className="form__items form__input" type="email" name="user_email" placeholder="Your Email" />
-          {/* <label>Message</label> */}
-          <textarea className="form__items form__textarea" name="message" rows={8} placeholder="Anything say to me" />
-          {/* <input type="submit" value="Send" /> */}
-          <div className="form__btn__container">
-            <button className="submit__btn test-uppercase">Send</button>
-            {/* <button className="submit__btn submit__btn__secondary test-uppercase">Reset</button> */}
+        <p className="form__desc text--s center">My inbox always opens for any messages.</p>
+        <form ref={form} id="form" onSubmit={formSubmitHandler}>
+          <ReCAPTCHA ref={recaptchaRef} size="invisible" sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY} />
+          <input className="form__items form__input" type="text" name="user_name" placeholder="Your Name" onChange={(e) => formChangeHandler(e, "user_name")} required />
+          <input className="form__items form__input" type="email" name="user_email" placeholder="Your Email"  onChange={(e) => formChangeHandler(e, "user_email")} required />
+          <textarea className="form__items form__textarea" name="message" rows={8} placeholder="Anything say to me" onChange={(e) => formChangeHandler(e, "message")} required />
+          <div className="form__btn__container"> 
+            <button className={`submit__btn flex__container__center test-uppercase ${loading ? "loading" : "" } ${ success === true ? "success" : "" } ${ success === false ? "fail" : "" }`} disabled={loading}>
+              <span className={`spinner transition__fast`}></span>
+              <span className={`submit__btn__text bold transition__fast`}>Send</span>
+              
+              <span className="check transition-bouncing__fast flex__container__center"><Check /></span>
+              <span className="cross transition-bouncing__fast flex__container__center"><ExclamationTriangle /></span>
+            </button>
           </div>
         </form>
       </div>

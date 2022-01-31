@@ -11,7 +11,7 @@ const ExperienceCard = ({ detail }) => {
           {/* <div className="timeline__flag__img flex__container__center">
             <img src={Test} alt="" />
           </div> */}
-          <div className="timeline__flag__title">{detail.title} <span className="timeline__flag__company"><a href={detail.companyLink} target="_blank">@ {detail.company}</a></span></div>
+          <div className="timeline__flag__title">{detail.title} <span className="timeline__flag__company"><a href={detail.companyLink} target="_blank" rel="noreferrer">@ {detail.company}</a></span></div>
           <div className="timeline__flag__time text--xs bold">{detail.period}</div>
         </div>
         <div className="timeline__card">

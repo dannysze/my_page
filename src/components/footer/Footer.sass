@@ -26,21 +26,19 @@
 
     .footer-icons__ribbon
       column-gap: 1em
-
-      // .footer-icons__containers
-        // padding: 1em
-
       .footer-icons__link
-          padding: 1em
-          background-color: v.$light-blue
-          border-radius: 50%
-
-          svg
-            width: 1em
-            height: 1em
-            color: #ffffff
-            // &, & > *
+        padding: 1em
+        background-color: v.$light-blue
+        border-radius: 1em
+        &:hover, &:focus
+          background-color: v.$blue
+        svg
+          width: 1em
+          height: 1em
+          color: #ffffff
 
     .footer__text
       margin: 3rem 0 0
       color: v.$light-yellow
+      span
+        color: v.$orange-yellow

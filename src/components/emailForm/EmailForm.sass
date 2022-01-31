@@ -52,15 +52,71 @@ $placeholder-color: #ffffff
       width: 100%
 
       .submit__btn
-        // border: none
-        padding: 0.5em 1.5em
+        position: relative
+        // padding: 0.5em 1.5em
         border-radius: 0.2em
         font-size: 1em
         background-color: v.$dark-blue
         border: 2px solid v.$light-yellow
         color: v.$light-yellow
-        // letter-spacing: 1px
         cursor: pointer
-
-        &.submit__btn__secondary
-    
+        height: 2.5em
+        width: 5.5em
+        overflow: hidden
+        transition: background-color .3s ease-in-out
+        span
+          position: absolute
+        &:hover, &:focus
+          background-color: v.$light-yellow
+          color: v.$dark-blue 
+        .submit__btn__text
+          // display: none
+          opacity: 1
+          transform: translateY(0)
+        .spinner
+          opacity: 0
+          transform: translateY(-30px)
+          width: 1em
+          height: 1em
+          border-radius: 50%
+          border: solid 3px
+          border-color: v.$dark-blue transparent v.$dark-blue transparent
+          box-sizing: border-box
+        .check, .cross
+          opacity: 0
+          transform: scale(0)
+          color: #fff !important
+        .check
+          font-size: 2.5em
+        .cross
+          font-size: 1.5em
+        &.loading
+          background-color: v.$light-yellow
+          color: v.$dark-blue 
+          cursor: not-allowed
+          .submit__btn__text
+            // display: none
+            opacity: 0
+            transform: translateY(30px)
+          .spinner
+            // display: inline-block
+            opacity: 1
+            transform: translateY(0)
+            animation: spin 1s linear .3s infinite
+          &.success, &.fail
+            .spinner
+              opacity: 0 !important
+          &.success
+            background-color: v.$success !important
+            border-color: v.$success !important
+            .check
+              opacity: 1
+              transform: scale(1)
+          &.fail
+            background-color: v.$danger !important
+            border-color: v.$danger !important
+            .cross
+              opacity: 1
+              transform: scale(1)
+  .grecaptcha-badge
+    z-index: 20 

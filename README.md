@@ -5,10 +5,14 @@ Hello! This is Danny and here is my portfolio website which is built in React.js
 Please visit via https://dannysze.github.io/my_page/ and let me know if you have any questions or suggestions 😉.
 
 Check list:
-- [ ] Responsive
-- [ ] Accessibility
-- [ ] Vulnerable emailjs 
+- [x] Responsive
+- [x] Vulnerable emailjs 
 - [ ] Animations
-- [ ] Loading buffer
-- [ ] Add bg on hero section
+  - [ ] Scrolling 
+  - [x] Email
+  - [ ] sliding
 - [ ] (Scroll observer hook)
+- [ ] Accessibility
+- [ ] Loading buffer
+- [ ] SEO
+- [ ] Add bg on hero section

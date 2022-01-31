@@ -78,6 +78,19 @@ a, a:hover, a:visited
 .transition__fast
   transition: all .3s ease-in-out
 
+.transition__xfast
+  transition: all .15s ease-in-out
+
+.transition-bouncing__fast
+  transition: all .5s cubic-bezier(0,1.63,1,1.25)
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+    
+
 // Rsponsive design for mobile
 @media (max-width: 1024px)
   .section__padding
