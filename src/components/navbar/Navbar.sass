@@ -71,6 +71,21 @@ $hover-font-color: #ffffff
       margin: 0.5em 0 0.5em auto
       border: 1px solid $font-color
       border-radius: 0.5em
+
+      
+// Animation of fading in from right
+.nav-link-appear
+  opacity: 0
+  transform: translateY(-50%)
+
+.nav-link-appear-active
+  opacity: 1
+  transform: translateY(0)
+  transition: opacity .3s ease-in-out, transform .3s ease-in-out
+
+.nav-link-appear-done
+  opacity: 1
+  transform: translateY(0)
         
 // Rsponsive design for mobile
 @media (max-width: 1024px)

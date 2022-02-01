@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './Hero.sass';
 
 const Hero = () => {
@@ -10,15 +11,26 @@ const Hero = () => {
 
   const heroItems = [first, second, third, heroPassage];
 
+  const [active, setActive] = useState(true);
+
   return (
     <section id="home" className="">
       <div className="max-width__container">
         <div className="home__container">
-          {heroItems.map((item, idx) => (
-            <div key={idx}>
-              {item}
-            </div>
-          ))}
+          <TransitionGroup component={null}>
+            {heroItems.map((item, idx) => (
+              <CSSTransition
+                appear={true}
+                timeout={1400}
+                classNames="hero"
+                key={idx}
+              >
+                <div key={idx} style={{ transitionDelay: `${idx * 200}ms` }}>
+                  {item}
+                </div>
+              </CSSTransition>
+            ))}
+          </TransitionGroup>
         </div>
       </div>
     </section>

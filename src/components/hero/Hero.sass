@@ -7,10 +7,8 @@
   display: flex
   align-items: center
   .home__container
-    // max-width: max(10%, 50vw))
     *[class^="home__"]
       display: inline-block
-      // margin-block: 0.5em
     .home__greet
       color: v.$orange-yellow
       margin-block: 1em
@@ -20,7 +18,6 @@
       margin: 0
     .home__slogan
       color: v.$light-yellow
-      // color: v.$orange
       margin: 0
     .home__desc
       color: v.$light-blue
@@ -28,7 +25,21 @@
       margin-block: 1em
 
 // Rsponsive design for mobile
-@media (max-width: 1024px)
-  .home__container
+// @media (max-width: 1024px)
+//   .home__container
     // max-width: 90vw !important
     // margin: auto
+
+// Animation of fading in from right
+.hero-appear
+  opacity: 0
+  transform: translateX(100%)
+
+.hero-appear-active 
+  opacity: 1
+  transform: translateX(0)
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out
+
+.hero-appear-done 
+  opacity: 1
+  transform: translateX(0)

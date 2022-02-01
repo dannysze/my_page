@@ -120,3 +120,30 @@ $placeholder-color: #ffffff
               transform: scale(1)
   .grecaptcha-badge
     z-index: 20 
+
+// Animation of fading in from right
+.form-title-appear
+  opacity: 0
+  transform: translateY(100%)
+
+.form-title-appear-active
+  opacity: 1
+  transform: translateY(0)
+  transition: opacity .5s ease-in-out, transform .5s ease-in-out
+
+.form-title-appear-done
+  opacity: 1
+  transform: translateY(0)
+
+.form-input-appear
+  opacity: 0
+  transform: translateX(100%)
+
+.form-input-appear-active
+  opacity: 1
+  transform: translateX(0)
+  transition: opacity .5s ease-in-out, transform .5s ease-in-out
+
+.form-input-appear-done
+  opacity: 1
+  transform: translateX(0)

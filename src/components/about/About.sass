@@ -5,7 +5,7 @@
     .about__title
       color: v.$dark-blue
     .about__avatar__container
-      text-align: center
+      // text-align: center
       #about__avatar
         // width: 200px
         width: clamp(150px, 20vw, 200px)
@@ -14,7 +14,7 @@
     .about__description__container
       max-width: 700px
       margin: 3rem auto
-      
+
       .about__description
         line-height: 1.5rem
 
@@ -46,7 +46,7 @@
           .about__cards__content__title
             color: v.$dark-blue
             margin-block: 1em 0.5em
-          .about__cards__content__list 
+          .about__cards__content__list
             list-style-type: none
             padding: 0
             margin-block-start: 0.5em
@@ -64,3 +64,30 @@
       box-shadow: none !important
       &:last-child
         border-bottom: 2px solid v.$light-yellow
+
+// Animation of fading in from right
+.about-appear
+  opacity: 0
+  transform: translateY(100%)
+
+.about-appear-active
+  opacity: 1
+  transform: translateY(0)
+  transition: opacity .5s ease-in-out, transform .5s ease-in-out
+
+.about-appear-done
+  opacity: 1
+  transform: translateY(0)
+
+.about-cards-appear
+  opacity: 0
+  transform: translateY(50%)
+
+.about-cards-appear-active
+  opacity: 1
+  transform: translateY(0)
+  transition: opacity .5s ease-in-out, transform .5s ease-in-out
+
+.about-cards-appear-done
+  opacity: 1
+  transform: translateY(0)
