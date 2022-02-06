@@ -12,6 +12,7 @@ import Maintainanace from "./pages/maintainance/Maintainance";
 function App() {
   useEffect(() => {
     // console.log(process.env.REACT_APP_MAINTAINANCE);
+    window.scrollTo(0, 0);
   });
 
   return (

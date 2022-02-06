@@ -30,6 +30,7 @@ const EmailForm = () => {
       })
       .catch((err) => {
         console.log(err);
+        setLoading(false);
       })
       .finally(() => {
         recaptchaRef.current.reset();
