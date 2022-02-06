@@ -5,6 +5,15 @@
   .experience__title
     margin-bottom: 1em
     color: v.$dark-blue
+  .max-width__container
+    & > div:nth-child(2)
+      .timeline__container::after
+        border-radius: 2.5px 2.5px 0 0
+
+    & > div:last-child
+      .timeline__container::after
+        border-radius: 0 0 2.5px 2.5px
+    
   .timeline__container 
     position: relative
 
@@ -18,12 +27,8 @@
       top: 0
       left: 50%
       transform: translateX(-50%)
-      // border-radius: 2.5px
-    &:nth-child(2)::after
-      border-radius: 2.5px 2.5px 0 0
-
-    &:last-child::after
-      border-radius: 0 0 2.5px 2.5px
+      z-index: -1
+    
 
     .timeline__items
       position: relative
@@ -41,7 +46,7 @@
         top: 1.9em
         left: 50%
         transform: translate(-50%, -50%)
-        z-index: 2
+        // z-index: 2
 
       .timeline__flag
         width: 30% 
@@ -119,65 +124,6 @@
             background: url(../../assets/icons/list_mark.svg)
             background-repeat: no-repeat
 
-// Animation of fading in from right
-.experience-title-appear
-  opacity: 0
-  transform: translateY(100%)
-
-.experience-title-appear-active
-  opacity: 1
-  transform: translateY(0)
-  transition: opacity .5s ease-in-out, transform .5s ease-in-out
-
-.experience-title-appear-done
-  opacity: 1
-  transform: translateY(0)
-
-.experience-timeline-appear
-  opacity: 0
-  transform: translateY(10%)
-
-.experience-timeline-appear-active
-  opacity: 1
-  transform: translateY(0)
-  transition: opacity .5s ease-in-out, transform .5s ease-in-out
-
-.experience-timeline-appear-done
-  opacity: 1
-  transform: translateY(0)
-
-.timeline-mark-appear
-  opacity: 0
-  transform: translateY(10%)
-
-.timeline-mark-appear-active
-  opacity: 1
-  transform: translateY(0)
-  transition: opacity .5s ease-in-out, transform .5s ease-in-out
-
-.timeline-mark-appear-done
-  opacity: 1
-  transform: translateY(0)
-
-.timeline-content-appear
-  opacity: 0
-  transform: translateX(50%)
-
-.timeline-content-appear-active
-  opacity: 1
-  transform: translateX(0)
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out
-
-.timeline-content-appear-done
-  opacity: 1
-  transform: translateX(0)
-
-.item__left
-  .timeline-content-appear
-    transform: translateX(-50%)
-  .timeline-content-appear-active
-    transform: translateX(0)
-    
 // Rsponsive design for mobile
 @media (max-width: 1024px)
 

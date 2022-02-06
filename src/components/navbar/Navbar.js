@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Helmet } from "react-helmet";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 import useResizeWidth from "../../hooks/useResizeWidth";
 import useClickOutside from "../../hooks/useClickOutside";
 import "./Navbar.sass";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const Navbar = () => {
   const [active, setActive] = useState(0);
@@ -14,7 +14,6 @@ const Navbar = () => {
   const screenWidth = useResizeWidth();
 
   useEffect(() => {
-    // console.log(`screenWidth: ${screenWidth}`);
     if (screenWidth > 1024) {
       setToggleMenu(false);
     }
@@ -43,10 +42,23 @@ const Navbar = () => {
         <body className={toggleMenu ? "blur" : ""} />
       </Helmet>
       <header>
-        <nav className="navbar">
-          <div
+        <nav
+          className="navbar max-width__container"
+          ref={screenWidth <= 1024 ? wrapperRef : null}
+        >
+          {/* <div
             className="max-width__container"
-            ref={screenWidth <= 1024 ? wrapperRef : null}
+          > */}
+          <ScrollAnimation
+            animateIn="bounceInDown"
+            offset={0}
+            animateOnce={true}
+            style={{
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              zIndex: 20,
+            }}
           >
             <button
               className={`toggle__btn ${toggleMenu ? "active" : ""}`}
@@ -54,31 +66,43 @@ const Navbar = () => {
             >
               <span style={toggleBtnStyle}></span>
             </button>
-            <div className={`navbar__container ${toggleMenu ? "active" : ""}`}>
-              <TransitionGroup component={null}>
-                {menuItems.map((menuItem, idx) => (
-                  <CSSTransition
-                    appear={true}
-                    timeout={800}
-                    classNames="nav-link"
+          </ScrollAnimation>
+          <div className={`navbar__container ${toggleMenu ? "active" : ""}`}>
+            {menuItems.map((menuItem, idx) =>
+              screenWidth > 1024 ? (
+                <ScrollAnimation
+                  animateIn="bounceInDown"
+                  animateOnce={true}
+                  delay={idx * 200}
+                  offset={0}
+                  key={idx}
+                >
+                  <a
                     key={idx}
+                    href={`#${menuItem}`}
+                    className={`nav__items mono ${
+                      active === idx ? "nav__active" : ""
+                    }`}
+                    onClick={() => navItemClickHandler(idx)}
                   >
-                    <a
-                      key={idx}
-                      href={`#${menuItem}`}
-                      className={`nav__items mono ${
-                        active === idx ? "nav__active" : ""
-                      }`}
-                      onClick={() => navItemClickHandler(idx)}
-                      style={{ transitionDelay: `${idx * 100}ms` }}
-                    >
-                      {menuItem}
-                    </a>
-                  </CSSTransition>
-                ))}
-              </TransitionGroup>
-            </div>
+                    {menuItem}
+                  </a>
+                </ScrollAnimation>
+              ) : (
+                <a
+                  key={idx}
+                  href={`#${menuItem}`}
+                  className={`nav__items mono ${
+                    active === idx ? "nav__active" : ""
+                  }`}
+                  onClick={() => navItemClickHandler(idx)}
+                >
+                  {menuItem}
+                </a>
+              )
+            )}
           </div>
+          {/* </div> */}
         </nav>
       </header>
     </>

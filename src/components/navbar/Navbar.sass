@@ -1,14 +1,15 @@
 @use '../../assets/variables' as v
 $font-color: v.$light-blue
 $hover-font-color: #ffffff
-.navbar
-  background: v.$dark-blue
-  padding-block: 0.5em
+header
   position: fixed
+  top: 0
   width: 100%
   z-index: 10
-  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1)
   height: 53px
+  background: v.$dark-blue
+  padding-block: 0.5em
+
   .max-width__container
     // position: relative
     display: flex
@@ -53,12 +54,12 @@ $hover-font-color: #ffffff
     column-gap: 2em
     transition: v.$fast-transition
     overflow: hidden
-
     .nav__items
       padding: 1em 0
       color: $font-color
       transition: v.$fast-transition
       text-transform: capitalize
+      overflow: visible
       &.nav__active, &:hover
         color: $hover-font-color
         // background: v.$bg-secondary
@@ -72,21 +73,6 @@ $hover-font-color: #ffffff
       border: 1px solid $font-color
       border-radius: 0.5em
 
-      
-// Animation of fading in from right
-.nav-link-appear
-  opacity: 0
-  transform: translateY(-50%)
-
-.nav-link-appear-active
-  opacity: 1
-  transform: translateY(0)
-  transition: opacity .3s ease-in-out, transform .3s ease-in-out
-
-.nav-link-appear-done
-  opacity: 1
-  transform: translateY(0)
-        
 // Rsponsive design for mobile
 @media (max-width: 1024px)
   .toggle__btn
@@ -101,9 +87,11 @@ $hover-font-color: #ffffff
     height: 100vh
     width: 0
     justify-content: center
+    > div
+      text-align: center
     &.active 
       width: min(60vw, 300px) !important
-      // display: flex !important
     .nav__items
       padding: 2em 0 !important
       text-align: center
+      display: inline-block

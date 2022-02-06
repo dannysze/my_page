@@ -8,11 +8,11 @@ Check list:
 
 - [x] Responsive
 - [x] Vulnerable emailjs
-- [ ] Animations
-  - [ ] Scrolling
+- [x] Animations
+  - [x] Scrolling
   - [x] Email
   - [x] sliding
-- [ ] (Scroll observer hook)
+- [ ] Refresh page
 - [ ] Accessibility
 - [ ] Loading buffer
 - [ ] SEO

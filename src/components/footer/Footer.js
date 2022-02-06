@@ -1,6 +1,7 @@
 import React from "react";
 import { Google, Github, Linkedin, Instagram } from "react-bootstrap-icons";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+// import { CSSTransition, TransitionGroup } from "react-transition-group";
+import ScrollAnimation from "react-animate-on-scroll";
 import "./Footer.sass";
 
 const Footer = () => {
@@ -21,36 +22,33 @@ const Footer = () => {
     <footer className="footer flex__container__center">
       <div className="footer__container">
         <div className="footer-icons__ribbon flex__container__center">
-          <TransitionGroup component={null}>
-            {buttons.map((item, idx) => (
-              <CSSTransition
-                appear={true}
-                timeout={700}
-                classNames="footer-link"
-                key={idx}
-              >
-                <a
-                  key={idx}
-                  href={item.link}
-                  className="footer-icons__link flex__container__center transition__xfast"
-                  style={{ transitionDelay: `${idx * 100}ms` }}
-                >
-                  {item.icon}
-                </a>
-              </CSSTransition>
-            ))}
-          </TransitionGroup>
-        </div>
-        <TransitionGroup>
-          <CSSTransition appear={true} timeout={800} classNames="footer-text">
-            <p
-              className="footer__text text--xs center mono"
-              style={{ transitionDelay: `400ms` }}
+          {buttons.map((item, idx) => (
+            <ScrollAnimation
+              animateIn="bounceInDown"
+              delay={idx * 200}
+              key={idx}
+              animateOnce={true}
             >
-              Danny Sze <span>&copy; 2022</span>
-            </p>
-          </CSSTransition>
-        </TransitionGroup>
+              <a
+                key={idx}
+                href={item.link}
+                className="footer-icons__link flex__container__center transition__xfast"
+              >
+                {item.icon}
+              </a>
+            </ScrollAnimation>
+          ))}
+        </div>
+        <ScrollAnimation
+          animateIn="bounceInDown"
+          delay={0.8}
+          animateOnce={true}
+          offset={0}
+        >
+          <p className="footer__text text--xs center mono">
+            Danny Sze <span>&copy; 2022</span>
+          </p>
+        </ScrollAnimation>
       </div>
     </footer>
   );

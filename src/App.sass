@@ -5,6 +5,7 @@
 
 .App
   height: 100%
+  width: 100%
   display: flex
   flex-direction: column
 
@@ -16,12 +17,16 @@
   align-items: center
 
 .max-width__container
-  max-width: min(90%, 1280px)
-  width: 100%
+  width: clamp(90%, 90%, 1280px)
+  // width: 100%
   margin: auto
 
 .section__padding
   padding-block: 8rem
+
+.blur
+  .section__padding
+    padding-block: 0 !important 
 
 // Typography
 
