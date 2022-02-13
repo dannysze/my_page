@@ -25,11 +25,11 @@ const EmailForm = () => {
     recaptchaRef.current
       .executeAsync()
       .then((captchaValue) => {
-        console.log(captchaValue);
+        // console.log(captchaValue);
         sendEmail(captchaValue);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         setLoading(false);
       })
       .finally(() => {
@@ -42,7 +42,7 @@ const EmailForm = () => {
       ...input,
       "g-recaptcha-response": captchaValue,
     };
-    console.log(params);
+    // console.log(params);
     emailjs
       .send(
         process.env.REACT_APP_SERVICE_ID,
@@ -51,13 +51,13 @@ const EmailForm = () => {
         process.env.REACT_APP_USER_ID
       )
       .then((res) => {
-        console.log(res.text);
+        // console.log(res.text);
         form.current.reset();
         // notification for success
         setSuccess(true);
       })
       .catch((err) => {
-        console.log(err.text);
+        // console.log(err.text);
         // notification for fail
         setSuccess(false);
       })
