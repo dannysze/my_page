@@ -8,6 +8,7 @@ import ScrollAnimation from "react-animate-on-scroll";
 const Navbar = () => {
   const [active, setActive] = useState(0);
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [animated, setAnimated] = useState(false);
 
   const menuItems = ["home", "about", "experience", "contact"];
 
@@ -36,6 +37,10 @@ const Navbar = () => {
     transitionDelay: toggleMenu ? "0s" : "0.4s",
   };
 
+  const stopAnimation = () => {
+    setAnimated(true);
+  };
+
   return (
     <>
       <Helmet>
@@ -53,6 +58,8 @@ const Navbar = () => {
             animateIn="bounceInDown"
             offset={0}
             animateOnce={true}
+            initiallyVisible={animated}
+            afterAnimatedIn={stopAnimation}
             style={{
               height: "100%",
               display: "flex",
@@ -73,8 +80,10 @@ const Navbar = () => {
                 <ScrollAnimation
                   animateIn="bounceInDown"
                   animateOnce={true}
+                  initiallyVisible={animated}
+                  afterAnimatedIn={stopAnimation}
                   delay={idx * 200}
-                  offset={0}
+                  offset={-200}
                   key={idx}
                 >
                   <a
