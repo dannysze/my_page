@@ -1,30 +1,37 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.sass";
 import "animate.css/animate.compat.css";
 import Navbar from "./components/navbar/Navbar";
 import Hero from "./components/hero/Hero";
+import Wave from "./components/wave/Wave";
 import About from "./components/about/About";
 import Experience from "./components/experience/Experience";
 import EmailForm from "./components/emailForm/EmailForm";
 import Footer from "./components/footer/Footer";
+import LoadingPage from "./pages/loadingPage/LoadingPage";
 import Maintainanace from "./pages/maintainance/Maintainance";
 
-function App() {
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    // console.log(process.env.REACT_APP_MAINTAINANCE);
-    window.scrollTo(0, 0);
-  });
+    // window.scrollTo(0, 0);
+    setIsLoading(false);
+  }, []);
+
+  if (process.env.REACT_APP_MAINTAINANCE === "true") return <Maintainanace />;
 
   return (
     <div className="App">
-      {process.env.REACT_APP_MAINTAINANCE === "true" ? (
-        <Maintainanace />
+      {isLoading ? (
+        <LoadingPage />
       ) : (
         <>
           <Navbar />
           <div id="content">
             <main>
               <Hero />
+              <Wave />
               <About />
               <Experience />
               <EmailForm />
@@ -35,6 +42,6 @@ function App() {
       )}
     </div>
   );
-}
+};
 
 export default App;

@@ -24,7 +24,7 @@ const Footer = () => {
         <div className="footer-icons__ribbon flex__container__center">
           {buttons.map((item, idx) => (
             <ScrollAnimation
-              animateIn="bounceInDown"
+              animateIn="fadeInUp"
               delay={idx * 200}
               key={idx}
               animateOnce={true}
@@ -40,7 +40,7 @@ const Footer = () => {
           ))}
         </div>
         <ScrollAnimation
-          animateIn="bounceInDown"
+          animateIn="fadeInUp"
           delay={0.8}
           animateOnce={true}
           offset={0}

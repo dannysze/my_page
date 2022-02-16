@@ -13,7 +13,7 @@ Check list:
   - [x] Email
   - [x] sliding
 - [ ] Refresh page
-- [ ] Accessibility
 - [ ] Loading buffer
+- [ ] Accessibility
 - [ ] SEO
 - [ ] Add bg on hero section

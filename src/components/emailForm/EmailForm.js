@@ -72,12 +72,12 @@ const EmailForm = () => {
   return (
     <section id="contact" className="flex__container__center section__padding">
       <div className="max-width__container" style={{ textAlign: "center" }}>
-        <ScrollAnimation animateIn="bounceInUp" animateOnce={true}>
+        <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
           <h1 className="form__title text--l text--uppercase center bold">
             Contact Me
           </h1>
         </ScrollAnimation>
-        <ScrollAnimation animateIn="bounceInUp" animateOnce={true}>
+        <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
           <p
             className="form__desc text--s center"
             style={{ transitionDelay: `200ms` }}
@@ -91,7 +91,7 @@ const EmailForm = () => {
             size="invisible"
             sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
           />
-          <ScrollAnimation animateIn="bounceInUp" animateOnce={true}>
+          <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
             <input
               className="form__items form__input"
               type="text"
@@ -101,7 +101,7 @@ const EmailForm = () => {
               required
             />
           </ScrollAnimation>
-          <ScrollAnimation animateIn="bounceInUp" animateOnce={true}>
+          <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
             <input
               className="form__items form__input"
               type="email"
@@ -111,7 +111,7 @@ const EmailForm = () => {
               required
             />
           </ScrollAnimation>
-          <ScrollAnimation animateIn="bounceInUp" animateOnce={true}>
+          <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
             <textarea
               className="form__items form__textarea"
               name="message"
@@ -121,7 +121,7 @@ const EmailForm = () => {
               required
             />
           </ScrollAnimation>
-          <ScrollAnimation animateIn="bounceInUp" animateOnce={true}>
+          <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
             <div className="form__btn__container">
               <button
                 className={`submit__btn flex__container__center test-uppercase ${
