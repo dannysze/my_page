@@ -3,9 +3,10 @@ import "./App.sass";
 import "animate.css/animate.compat.css";
 import Navbar from "./components/navbar/Navbar";
 import Hero from "./components/hero/Hero";
-import Wave from "./components/wave/Wave";
+import Wave from "./components/Wave";
 import About from "./components/about/About";
 import Experience from "./components/experience/Experience";
+import WaveReverse from "./components/WaveReverse";
 import EmailForm from "./components/emailForm/EmailForm";
 import Footer from "./components/footer/Footer";
 import LoadingPage from "./pages/loadingPage/LoadingPage";
@@ -34,6 +35,7 @@ const App = () => {
               <Wave />
               <About />
               <Experience />
+              <WaveReverse />
               <EmailForm />
             </main>
             <Footer />
