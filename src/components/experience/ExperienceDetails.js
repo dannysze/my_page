@@ -8,10 +8,33 @@
 // desc: string[] -> both
 
 const Details = [{
-  id: 1,
+  id: 7,
+  type: 1,
+  title: 'Software/Application Engineering Analyst',
+  period: 'Aug 2022 - present',
+  company: 'Accenture',
+  companyLink: 'https://www.accenture.com/hk-en',
+  desc: [
+    'Developed progressive and cross-platform fintech application with Agile software development principles',
+    'Integrated different modules of the application and built sustainable and stateful systems with defensive and well-documented code',
+    'Participated in Creating and Maintaining APIs and Managing PHP admin server with HMVC architecture',
+  ]
+}, {
+  id: 6,
+  type: 2,
+  title: 'Online Wordle',
+  period: 'Jul 2022 - present',
+  company: 'Project',
+  companyLink: 'https://github.com/thalangi33/online-battle-wtever',
+  desc: [
+    'Developed a multiplayer version of the popular Wordle game',
+    'Provided users management features allowing users to record their results',
+  ]
+}, {
+  id: 5,
   type: 1,
   title: 'Full Stack Developer',
-  period: 'Jun 2021 - present',
+  period: 'Jun 2021 - Apr 2022',
   company: 'iPYGG',
   companyLink: 'https://www.ipygg.com/',
   desc: [
@@ -20,7 +43,7 @@ const Details = [{
     'Participated in Creating and Maintaining APIs and Managing PHP admin server with HMVC architecture',
   ]
 }, {
-  id: 2,
+  id: 4,
   type: 2,
   title: 'CalEvent',
   period: 'Feb 2021 - Apr 2021',
@@ -43,7 +66,7 @@ const Details = [{
     'Prepared documentation of API and database'
   ]
 }, {
-  id: 4,
+  id: 2,
   type: 1,
   title: 'Summer Intern',
   period: 'Jul 2020 - Sep 2021',
@@ -54,7 +77,7 @@ const Details = [{
     'Taught web programming courses including HTML5/CSS, Javascript, jQuery, and Bootstrap'
   ]
 }, {
-  id: 5,
+  id: 1,
   type: 2,
   title: 'Dashboard',
   period: 'Jul 2020',
