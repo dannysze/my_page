@@ -12,8 +12,9 @@ const Hero = () => {
   );
   const heroPassage = (
     <p className="home__desc text--xl">
-      I will graduate from The Chinese University of Hong Kong in July, 2022.
-      Currently, I'm a part-time full stack developer at iPYGG.
+      I graduated from CUHK with a bachelor degree Computer Science in July,
+      2022. Currently, I'm a Software/Application Engineering Analyst at
+      Accenture.
     </p>
   );
 

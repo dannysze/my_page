@@ -31,7 +31,7 @@ const ExperienceCard = ({ detail }) => {
             {`${detail.title} `}
             <span className="timeline__flag__company">
               <a href={detail.companyLink} target="_blank" rel="noreferrer">
-                @ {detail.company}
+                @{detail.company}
               </a>
             </span>
           </div>

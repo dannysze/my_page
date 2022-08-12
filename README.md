@@ -16,4 +16,4 @@ Check list:
 - [ ] Loading buffer
 - [ ] Accessibility
 - [ ] SEO
-- [ ] Add bg on hero section
+- [x] Decorated sections with wave svg
